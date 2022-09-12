@@ -69,7 +69,9 @@ def get_unique_industries(path):
     list
         List of unique industries
     """
-    return []
+    jobs = read(path)
+    jobs_industry = [job["industry"] for job in jobs]
+    return list(filter(None, set(jobs_industry)))
 
 # print(get_unique_industries('src/jobs.csv'))
 
