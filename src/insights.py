@@ -1,3 +1,7 @@
+from src.jobs import read
+# from rich import print
+
+
 def get_unique_job_types(path):
     """Checks all different job types and returns a list of them
 
@@ -13,7 +17,16 @@ def get_unique_job_types(path):
     list
         List of unique job types
     """
-    return []
+    jobs = read(path)
+    jobs_type = [job["job_type"] for job in jobs]
+    # for job in jobs:
+    # jobs_type.append(job["job_type"])
+    # return list(jobs_set)
+    # print(jobs_set)
+    # return job
+    return list(set(jobs_type))
+
+# print(get_unique_job_types('src/jobs.csv'))
 
 
 def filter_by_job_type(jobs, job_type):
@@ -31,7 +44,14 @@ def filter_by_job_type(jobs, job_type):
     list
         List of jobs with provided job_type
     """
+    # jobs_list = [job for job in jobs if job["job_type"] == job_type]
+    # for job in jobs:
+    #     if job["job_type"] == job_type:
+    #         jobs_list.append(job)
+    # return jobs_list
     return []
+
+# print(filter_by_job_type(read('src/jobs.csv'), "CONTRACTOR"))
 
 
 def get_unique_industries(path):
@@ -50,6 +70,8 @@ def get_unique_industries(path):
         List of unique industries
     """
     return []
+
+# print(get_unique_industries('src/jobs.csv'))
 
 
 def filter_by_industry(jobs, industry):
