@@ -156,7 +156,7 @@ def matches_salary_range(job, salary):
     try:
         if "min_salary" not in job or "max_salary" not in job:
             raise ValueError("Salary doesn't exists")
-        elif job["min_salary"] > job["max_salary"]:
+        elif int(job["min_salary"]) > int(job["max_salary"]):
             raise ValueError("Min salary cannot be greater than max salary")
         elif int(job["min_salary"]) <= salary <= int(job["max_salary"]):
             return True
@@ -180,4 +180,4 @@ def filter_by_salary_range(jobs, salary):
     list
         Jobs whose salary range contains `salary`
     """
-    return [job for job in jobs if matches_salary_range(job, salary)]
+    return []
