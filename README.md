@@ -27,8 +27,6 @@ This project is based on the implementation of analysis from a set of employment
 ---
 # Deployment / *Implantação*
 
-See it in action/ **Veja em ação**: [https://kelsonbatista.github.io/project_pyhton_job_insights/](https://kelsonbatista.github.io/project_pyhton_job_insights/)
-
 Commands:
 
 - docker-compose up -d
